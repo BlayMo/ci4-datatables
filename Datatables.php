@@ -1,4 +1,11 @@
 <?php namespace App\Libraries;
+/*
+| Server Side Datatable Library for CodeIgniter 4 Framework
+| (c) Ahmad Irsyadul Ibad
+| https://github.com/irsyadulibad
+| This library is licensed under MIT License :
+| https://github.com/irsyadulibad/ci4-datatables/blob/master/LICENSE
+*/
 use \Config\Services;
 use \Config\Database;
 
