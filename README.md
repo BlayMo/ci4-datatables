@@ -1,3 +1,7 @@
+![GitHub](https://img.shields.io/github/license/irsyadulibad/ci4-datatables)
+![GitHub repo size](https://img.shields.io/github/repo-size/irsyadulibad/ci4-datatables?label=size)
+![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=irsyadulibad/ci4-datatables)
+
 # ci4-datatables
 Server Side Datatables Library for CodeIgniter 4 Framework
 
@@ -18,6 +22,7 @@ Cara Instalasi:
 * Letakkan file Datatables.php, (pada folder ```app/Libraries/```)
 
 ## Contoh Sederhana
+* PHP
 ```php
 <?php namespace App\Controllers;
 
@@ -34,7 +39,37 @@ class Example extends Controller{
   }
 }
 ```
-<br/>
+
+* Javascript
+```Javascript
+$('#table').DataTable({
+    processing: true,
+    serverSide: true,
+    ajax:{
+      url: yourUrl,
+      type: 'post'
+    },
+    columns: [
+      // This will generate number
+      {data: null, sortable: false,
+        render: function(data, type, row, meta){
+          return meta.row + meta.settings._iDisplayStart + 1;
+        }
+      },
+      {data: 'name', name: 'name'},
+      {data: 'email', name: 'email'},
+      // Create action's button
+      {data: null, sortable: false,
+        render: function(data, type, row){
+          return `
+            <a href="/user/edit/${row.id}">Edit</a>
+          `;
+        }
+      }
+    ]
+  });
+```
+<br />
 
 ## Dokumentasi
 
